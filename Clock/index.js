@@ -6,15 +6,13 @@
         var s = date.getSeconds();
         var session = "AM";
 
-        //To get rid of the 0 in front of the time
-        if (h ==0) {
-        	h = 12;
+        if (h >=12) {
+        	h = h -12;
+            session = "PM";
         }
 		
-		//To get the clock to show in 12 hour intervals and not 24
-        if(h > 12){
-        	h = h - 12;
-        	sesion = "PM";
+        if(h == 0){
+        	h = 12;
         }
 
       h = (h < 10) ? "0" + h : h;
